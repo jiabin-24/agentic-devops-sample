@@ -1,0 +1,82 @@
+name: 启用 AKS 监控
+description: 申请 AKS 监控、仪表盘、告警和运维就绪能力
+title: "[AKS 可观测性] "
+labels:
+  - observability
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请描述期望的运维结果。不要包含凭据、令牌或机密资源信息。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题与目标
+      description: 当前有哪些内容无法观测或操作？需要实现什么结果？
+      placeholder: 运维人员无法在工作负载受到影响前发现控制平面饱和。
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 范围
+      description: 请说明环境、群集类型和信号，但不要包含敏感标识符。
+      placeholder: 非生产和生产 AKS 群集；API Server、调度器、节点、工作负载和依赖项。
+    validations:
+      required: true
+  - type: dropdown
+    id: iac
+    attributes:
+      label: 基础设施即代码
+      options:
+        - Bicep
+        - Terraform
+        - 两者都需要
+        - 遵循项目现有约定
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: 身份、网络和合规约束
+      description: 请包含托管身份、专用网络、RBAC、数据驻留、保留期或策略要求。
+    validations:
+      required: true
+  - type: textarea
+    id: signals
+    attributes:
+      label: 所需信号与运维操作
+      description: 请列出仪表盘、告警、阈值、严重程度、责任归属和预期修复方式。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      description: 请提供可独立验证的度量结果。
+      placeholder: |
+        - 假如 API Server 不可用，当告警等待窗口结束时，那么平台团队会收到严重告警。
+        - 所有告警都包含负责人、严重程度、影响和运行手册 URL。
+    validations:
+      required: true
+  - type: textarea
+    id: exclusions
+    attributes:
+      label: 范围外
+      description: 请说明本次变更不得包含哪些内容。
+  - type: textarea
+    id: rollout
+    attributes:
+      label: 发布与回滚预期
+      description: 请说明变更窗口、分阶段发布、观察期和回滚约束。
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: 确认项
+      options:
+        - label: 此 Issue 中未包含任何凭据、令牌或机密。
+          required: true
+        - label: 生产环境变更需要明确审批。
+          required: true
