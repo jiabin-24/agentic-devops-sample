@@ -1,5 +1,5 @@
 ---
-name: migrated-skill
+name: implement-change
 description: 实施已批准的 Agentic DevOps 变更，并在不部署的情况下完成验证。
 disable-model-invocation: true
 argument-hint: "已批准的 Issue、验收标准和架构"

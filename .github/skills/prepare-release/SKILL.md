@@ -1,5 +1,5 @@
 ---
-name: migrated-skill-2
+name: prepare-release
 description: 评估发布就绪情况，并准备部署、回滚、验证和发布说明。
 disable-model-invocation: true
 argument-hint: "Issue、拉取请求、版本和测试证据"

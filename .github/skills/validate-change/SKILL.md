@@ -1,5 +1,5 @@
 ---
-name: migrated-skill-3
+name: validate-change
 description: 为 IaC、AKS、仪表盘或告警变更创建并执行验证计划。
 disable-model-invocation: true
 argument-hint: "需要验证的变更集和验收标准"
